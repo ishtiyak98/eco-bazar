@@ -1,9 +1,18 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
+  <Topbar></Topbar>
   <main>
-    <TheWelcome />
+    <h1>demo</h1>
   </main>
 </template>
+
+<script>
+import Topbar from '../components/Shared/Topbar/Topbar.vue'
+export default {
+  name: 'HomeView',
+  components: { Topbar },
+
+  data() {
+    return {}
+  }
+}
+</script>

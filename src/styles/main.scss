@@ -1,0 +1,106 @@
+//!----------- google font import -----------
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+//!----------- scss style -----------
+@import './config';
+@import './responsive';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $gray-g700;
+  background-color: $white;
+}
+
+//!----------- custom container -----------
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+//!----------- custom font size -----------
+.text-12 {
+  font-size: 12px;
+}
+
+.text-14 {
+  font-size: 14px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+//!----------- custom text color -----------
+.text-gray-g50 {
+  color: $gray-g50;
+}
+.text-gray-g100 {
+  color: $gray-g100;
+}
+.text-gray-g200 {
+  color: $gray-g200;
+}
+.text-gray-g300 {
+  color: $gray-g300;
+}
+.text-gray-g400 {
+  color: $gray-g400;
+}
+.text-gray-g500 {
+  color: $gray-g500;
+}
+.text-gray-g600 {
+  color: $gray-g600;
+}
+.text-gray-g700 {
+  color: $gray-g700;
+}
+.text-gray-g800 {
+  color: $gray-g800;
+}
+.text-gray-g900 {
+  color: $gray-g900;
+}
+
+//!----------- custom background color -----------
+.bg-gray-g50 {
+  background-color: $gray-g50;
+}
+.bg-gray-g100 {
+  background-color: $gray-g100;
+}
+.bg-gray-g200 {
+  background-color: $gray-g200;
+}
+.bg-gray-g300 {
+  background-color: $gray-g300;
+}
+.bg-gray-g400 {
+  background-color: $gray-g400;
+}
+.bg-gray-g500 {
+  background-color: $gray-g500;
+}
+.bg-gray-g600 {
+  background-color: $gray-g600;
+}
+.bg-gray-g700 {
+  background-color: $gray-g700;
+}
+.bg-gray-g800 {
+  background-color: $gray-g800;
+}
+.bg-gray-g900 {
+  background-color: $gray-g900;
+}
