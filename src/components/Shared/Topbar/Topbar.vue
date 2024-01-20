@@ -11,15 +11,17 @@
       </div>
       <p class="text-12">Store Location: Lincoln- 344, Illinois, Chicago, USA</p>
     </div>
-    <!-- <div class="d-flex ga-2">
-      <v-select :items="['eng', 'বাংলা']" v-model="selectedLanguage" variant="plain"></v-select>
-      <v-select :items="['usd', 'টাকা']" v-model="selectedCurrency" variant="underlined"></v-select>
-    </div> -->
     <div class="dropdown">
-      <div class="d-flex align-center ga-2">
-        <p class="dropdown__text">{{ selectedLanguage }}</p>
-        <div class="dropdown__icon">
+      <div class="dropdown__content d-flex align-center ga-1" @click="changeLangOpen">
+        <p class="dropdown__content__text text-12 capitalize">
+          {{ selectedLanguage }}
+        </p>
+        <div
+          class="dropdown__content__icon"
+          :class="{ 'dropdown__content__icon--rotate': selectedLanguageOpen }"
+        >
           <svg
+            class="d-block"
             xmlns="http://www.w3.org/2000/svg"
             width="9"
             height="6"
@@ -35,6 +37,10 @@
           </svg>
         </div>
       </div>
+      <div :class="{ 'd-block': selectedLanguageOpen }" class="dropdown__selection d-none">
+        <p class="dropdown__selection__item text-12">Eng</p>
+        <p class="dropdown__selection__item text-12">বাংলা</p>
+      </div>
     </div>
   </div>
 </template>
@@ -45,10 +51,65 @@ export default {
   data() {
     return {
       selectedLanguage: 'eng',
-      selectedCurrency: 'usd'
+      selectedCurrency: 'usd',
+      selectedLanguageOpen: false,
+      selectedCurrencyOpen: false
+    }
+  },
+  methods: {
+    changeLangOpen() {
+      this.selectedLanguageOpen = !this.selectedLanguageOpen
     }
   }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../../styles/config';
+.dropdown {
+  position: relative;
+
+  &__content {
+    cursor: pointer;
+
+    &__icon {
+      transform: rotate(0deg);
+      transition: transform 0.3s;
+
+      &--rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__selection {
+    width: 100px;
+    color: $white;
+    background-color: $primary;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border-radius: 4px;
+
+    &__item {
+      padding: 5px 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-hard;
+      }
+      &:first-child {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-g800;
+      }
+    }
+  }
+}
+</style>

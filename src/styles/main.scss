@@ -24,6 +24,11 @@ body {
   margin: 0 auto;
 }
 
+//!----------- text capitalize -----------
+.capitalize {
+  text-transform: capitalize;
+}
+
 //!----------- custom font size -----------
 .text-12 {
   font-size: 12px;
@@ -74,6 +79,9 @@ body {
 }
 
 //!----------- custom background color -----------
+.bg-primary {
+  background-color: $primary;
+}
 .bg-gray-g50 {
   background-color: $gray-g50;
 }
