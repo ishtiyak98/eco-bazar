@@ -1,11 +1,12 @@
 <template>
   <div class="container">
+    <!--! top nav section -->
     <div class="top-nav d-flex align-center justify-space-between">
       <div>
         <img src="../../../assets/logo.png" alt="eco-bazar logo" width="183" srcset="" />
       </div>
       <div class="top-nav__search">
-        <input class="top-nav__search__input" type="text" name="" id="" />
+        <input class="top-nav__search__input" type="text" placeholder="Search an item" />
         <div class="top-nav__search__btn">Search</div>
       </div>
       <div class="d-flex align-center ga-2">
@@ -19,6 +20,39 @@
       </div>
     </div>
   </div>
+
+  <!--! navbar section -->
+  <nav class="navbar">
+    <div class="container d-flex align-center">
+      <div class="navbar__menu" style="">
+        <img class="d-block" src="../../../assets/icons/menu.svg" alt="" />
+      </div>
+      <div class="navbar__category d-flex align-center justify-space-between">
+        <p>All Categories</p>
+        <div>
+          <svg
+            class="d-block"
+            xmlns="http://www.w3.org/2000/svg"
+            width="9"
+            height="6"
+            viewBox="0 0 9 6"
+            fill="none"
+          >
+            <path d="M8 1.25L4.5 4.75L1 1.25" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+      <div class="navbar__items">
+        <p class="navbar__items__item navbar__items__item--active">Home</p>
+        <p class="navbar__items__item">Shop</p>
+        <p class="navbar__items__item">Pages</p>
+        <p class="navbar__items__item">Blog</p>
+        <p class="navbar__items__item">About Us</p>
+        <p class="navbar__items__item">Contact Us</p>
+      </div>
+      <div class="navbar__actions"></div>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -31,6 +65,8 @@ export default {
 @import '../../../styles/_config.scss';
 .top-nav {
   position: relative;
+  padding: 24px 0px;
+
   &__search {
     display: flex;
     align-items: center;
@@ -58,6 +94,54 @@ export default {
       &:hover {
         cursor: pointer;
         background-color: $primary-hard;
+      }
+    }
+  }
+}
+
+.navbar {
+  color: $gray-g500;
+  background-color: $gray-g900;
+
+  &__menu {
+    height: 100%;
+    background-color: #00b207;
+    padding: 20px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $primary-hard;
+    }
+  }
+
+  &__category {
+    color: white;
+    padding: 0px 16px;
+    width: 242px;
+    height: 72px;
+    background-color: $gray-g800;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      stroke: $white;
+    }
+  }
+
+  &__items {
+    display: flex;
+    //gap: 32px;
+    &__item {
+      padding: 20px 16px;
+      margin: 0px 8px;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &--active {
+        color: $white;
       }
     }
   }

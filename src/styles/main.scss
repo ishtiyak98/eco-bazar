@@ -77,10 +77,11 @@ body {
 .text-gray-g900 {
   color: $gray-g900;
 }
+b
 
 //!----------- custom background color -----------
 .bg-primary {
-  background-color: $primary;
+  background-color: $primary !important;
 }
 .bg-gray-g50 {
   background-color: $gray-g50;
