@@ -58,7 +58,7 @@
       <!--! dropdown 2 -->
       <div class="dropdown">
         <div
-          v-click-outside="onClickCurrencyOutside"
+          v-click-outside="onClickOutside"
           class="dropdown__content d-flex align-center ga-1"
           @click="toggleCurrencyDropdown"
         >
@@ -124,6 +124,7 @@ export default {
     },
 
     onClickLanguageOutside() {
+      console.log('dvdv')
       this.languageDropdownToggle = false
     },
 
@@ -136,6 +137,12 @@ export default {
     },
 
     onClickCurrencyOutside() {
+      console.log('clicked')
+      this.currencyDropdownToggle = false
+    },
+
+    onClickOutside(event: any) {
+      console.log(event.target)
       this.currencyDropdownToggle = false
     }
   }

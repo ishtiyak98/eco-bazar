@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 body {
@@ -112,4 +112,26 @@ b
 }
 .bg-gray-g900 {
   background-color: $gray-g900;
+}
+
+//!----------- custom buttons -----------
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 48px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow:
+    rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  &--primary {
+    background-color: $primary;
+
+    &:hover {
+      background-color: darken($primary, 5);
+    }
+  }
 }

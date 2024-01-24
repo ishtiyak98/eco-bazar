@@ -11,14 +11,18 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
+// splide js
+import VueSplide from '@splidejs/vue-splide'
+import '@splidejs/vue-splide/css';
+
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 
 const vuetify = createVuetify({
-    components,
-    directives,
-  })
+  components,
+  directives
+})
 
-app.use(vuetify).mount('#app')
+app.use(vuetify).use(VueSplide).mount('#app')
