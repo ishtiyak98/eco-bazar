@@ -1,4 +1,23 @@
-export const sliderData = [
+export interface ISliderData {
+  id: number
+  heading: string
+  content: string
+  btn: string | boolean
+}
+
+export interface ISliderOptions {
+  type: string
+  autoplay: boolean
+  speed: number
+  interval: number
+  perPage: number
+  gap: string
+  easing: string
+  arrows: boolean
+  autoHeight: boolean
+}
+
+export const sliderData: ISliderData[] = [
   {
     id: 1,
     heading: 'Fresh & Healthy Organic Food',
@@ -19,15 +38,14 @@ export const sliderData = [
   }
 ]
 
-export const sliderOptions = {
+export const sliderOptions: ISliderOptions = {
   type: 'loop',
   autoplay: true,
   speed: 800,
   interval: 2500,
   perPage: 1,
   gap: '0px',
-  width: '985px',
-  height: '100%',
   easing: 'ease',
-  arrows: false
+  arrows: false,
+  autoHeight: true
 }

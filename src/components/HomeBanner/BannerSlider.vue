@@ -1,9 +1,9 @@
 <template>
   <Splide :has-track="false" :options="sliderOptions" aria-label="...">
-    <div class="custom-wrapper">
+    <div class="home-banner__wrapper">
       <SplideTrack>
         <SplideSlide v-for="data in sliderData" :key="data.id">
-          <div class="home-banner d-flex align-center pa-12">
+          <div class="home-banner pa-12 h-100">
             <div>
               <div class="home-banner__heading mb-5">
                 <h1>{{ data.heading }}</h1>
@@ -16,13 +16,12 @@
                 class="home-banner__btn btn btn--primary d-inline-flex align-center ga-2"
               >
                 <p>{{ data.btn }}</p>
-                <img src="../../assets//icons/arrow-right.svg" alt="" />
+                <img src="../../assets/icons/arrow-right.svg" alt="" />
               </div>
             </div>
           </div>
         </SplideSlide>
       </SplideTrack>
-
       <ul class="splide__pagination"></ul>
     </div>
   </Splide>
@@ -30,8 +29,10 @@
 
 <script lang="ts">
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/vue-splide'
-import { sliderData, sliderOptions } from './sliderData'
-export default {
+import { sliderData, sliderOptions } from '@/components/HomeBanner/sliderData'
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'BannerSlider',
   components: { Splide, SplideSlide, SplideTrack },
   data() {
@@ -40,34 +41,16 @@ export default {
       sliderOptions: sliderOptions
     }
   }
-}
+})
 </script>
-
-<style lang="scss">
-@import '../../styles/config';
-
-.splide__pagination {
-  &__page {
-    width: 10px;
-    height: 10px;
-    background-color: $green-g600;
-    opacity: 1;
-
-    &.is-active {
-      background-color: $white;
-      transform: scale(1);
-    }
-  }
-}
-</style>
 
 <style lang="scss" scoped>
 @import '../../styles/config';
 .home-banner {
   width: 100%;
-  height: 533px;
+  height: 100%;
   color: $white;
-  margin-top: 24px;
+
   background-image: url('../../assets/images/home-banner-bg-one.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -105,9 +88,26 @@ export default {
   }
 }
 
-.splide__pagination {
-  margin-bottom: 15px;
-  left: 0;
-  right: 86%;
+.home-banner__wrapper {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  :deep .splide__pagination {
+    margin-bottom: 15px;
+    left: 0;
+    right: 86%;
+
+    &__page {
+      width: 10px;
+      height: 10px;
+      background-color: $green-g600;
+      opacity: 1;
+
+      &.is-active {
+        background-color: $white;
+        transform: scale(1);
+      }
+    }
+  }
 }
 </style>
