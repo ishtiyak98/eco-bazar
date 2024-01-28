@@ -56,7 +56,7 @@
     </div>
     <div class="banner-categories__item">
       <div class="banner-categories__item__icon pt-1">
-        <EcoIcon name="plus" style="width: 18px; height: 18px;"></EcoIcon>
+        <EcoIcon name="plus" style="width: 18px; height: 18px"></EcoIcon>
       </div>
       <p class="banner-categories__item__text">View all Category</p>
     </div>

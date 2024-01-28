@@ -3,7 +3,7 @@
     <div class="home-banner__wrapper">
       <SplideTrack>
         <SplideSlide v-for="data in sliderData" :key="data.id">
-          <div class="home-banner pa-12 h-100">
+          <div class="home-banner pa-12 h-100 d-flex align-center">
             <div>
               <div class="home-banner__heading mb-5">
                 <h1>{{ data.heading }}</h1>
@@ -63,11 +63,24 @@ export default defineComponent({
   }
 
   &__sub-heading {
-    padding-left: 12px;
-    border-left: 3px solid $primary;
+    padding-left: 18px;
+    max-width: 140px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 3px;
+      height: 78%;
+      background-color: $primary;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
     p {
-      color: $gray-g400;
+      color: #fff;
       font-size: 24px;
+      line-height: 1.6;
     }
   }
 
@@ -88,10 +101,18 @@ export default defineComponent({
   }
 }
 
+.splide {
+  height: 100% !important;
+
+  &__track {
+    height: 100%;
+  }
+}
+
 .home-banner__wrapper {
-  background-color: red;
   width: 100%;
   height: 100%;
+
   :deep .splide__pagination {
     margin-bottom: 15px;
     left: 0;

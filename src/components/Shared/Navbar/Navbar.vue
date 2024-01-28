@@ -50,14 +50,23 @@
         <p class="navbar__items__item">About Us</p>
         <p class="navbar__items__item">Contact Us</p>
       </div>
-      <div class="navbar__actions"></div>
+      <div class="navbar__actions ms-auto d-flex ga-6">
+        <EcoIcon name="heart" class="navbar__actions__icon"></EcoIcon>
+        <div class="navbar__actions__bag">
+          <p class="navbar__actions__bag__number">2</p>
+          <EcoIcon name="bag" class="navbar__actions__icon"></EcoIcon>
+        </div>
+        <EcoIcon name="user" class="navbar__actions__icon"></EcoIcon>
+      </div>
     </div>
   </nav>
 </template>
 
 <script lang="ts">
+import EcoIcon from '../EcoIcon/EcoIcon.vue'
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  components: { EcoIcon }
 }
 </script>
 
@@ -105,7 +114,7 @@ export default {
 
   &__menu {
     height: 100%;
-    background-color: #00b207;
+    background-color: $primary;
     padding: 20px;
 
     &:hover {
@@ -142,6 +151,39 @@ export default {
 
       &--active {
         color: $white;
+      }
+    }
+  }
+
+  &__actions {
+    &__icon {
+      stroke: $white;
+
+      &:hover {
+        stroke: $primary;
+        cursor: pointer;
+      }
+    }
+    &__bag {
+      position: relative;
+
+      &__number {
+        width: 22px;
+        height: 22px;
+        border-radius: 50px;
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        background-color: $primary;
+        border: 2px solid $gray-g800;
+        position: absolute;
+        top: -2px;
+        right: -5px;
+        display: block;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
