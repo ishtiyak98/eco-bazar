@@ -3,7 +3,14 @@
     <div class="home-banner__wrapper">
       <SplideTrack>
         <SplideSlide v-for="data in sliderData" :key="data.id">
-          <div class="home-banner pa-12 h-100 d-flex align-center">
+          <div
+            class="home-banner pa-12 h-100 d-flex align-center"
+            :class="{
+              'home-banner--one': data.id === 1,
+              'home-banner--two': data.id === 2,
+              'home-banner--three': data.id === 3
+            }"
+          >
             <div>
               <div class="home-banner__heading mb-5">
                 <h1>{{ data.heading }}</h1>
@@ -51,10 +58,19 @@ export default defineComponent({
   height: 100%;
   color: $white;
 
-  background-image: url('../../assets/images/home-banner-bg-one.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  &--one {
+    background-image: url('../../assets/images/home-banner-bg-one.png');
+  }
+  &--two {
+    background-image: url('../../assets/images/home-banner-bg-two.png');
+  }
+  &--three {
+    background-image: url('../../assets/images/home-banner-bg-three.png');
+  }
 
   h1 {
     max-width: 390px;

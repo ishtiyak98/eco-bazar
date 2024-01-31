@@ -1,6 +1,15 @@
 <template>
   <div class="banner-categories">
-    <div class="banner-categories__item">
+    <div class="banner-categories__container">
+      <div v-for="category in categoriesData" :key="category.id" class="banner-categories__item">
+        <div class="banner-categories__item__icon">
+          <EcoIcon :name="category.icon"></EcoIcon>
+        </div>
+        <p class="banner-categories__item__text">{{ category.name }}</p>
+      </div>
+    </div>
+
+    <!-- <div class="banner-categories__item">
       <div class="banner-categories__item__icon">
         <EcoIcon name="apple"></EcoIcon>
       </div>
@@ -53,7 +62,7 @@
         <EcoIcon name="food"></EcoIcon>
       </div>
       <p class="banner-categories__item__text">Cooking</p>
-    </div>
+    </div> -->
     <div class="banner-categories__item">
       <div class="banner-categories__item__icon pt-1">
         <EcoIcon name="plus" style="width: 18px; height: 18px"></EcoIcon>
@@ -65,10 +74,16 @@
 
 <script lang="ts">
 import EcoIcon from '@/components/Shared/EcoIcon/EcoIcon.vue'
+import { categoriesData } from './categories'
 
 export default {
   name: 'BannerCategories',
-  components: { EcoIcon }
+  components: { EcoIcon },
+  data() {
+    return {
+      categoriesData: categoriesData
+    }
+  }
 }
 </script>
 
