@@ -9,61 +9,7 @@
       </div>
     </div>
 
-    <!-- <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="apple"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Fresh Fruits</p>
-    </div>
-    <div class="banner-categories__item banner-categories__item--active">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="vegetables"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Vegetables</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="fish"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">River Fish</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="meat"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Chicken & Meat</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="coffee"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Drink & Water</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="ice-cream"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Yogurt & Ice Cream</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="cupcake"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Cake & Bread</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="pie"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Butter & Cream</p>
-    </div>
-    <div class="banner-categories__item">
-      <div class="banner-categories__item__icon">
-        <EcoIcon name="food"></EcoIcon>
-      </div>
-      <p class="banner-categories__item__text">Cooking</p>
-    </div> -->
-    <div class="banner-categories__item">
+    <div class="banner-categories__item banner-categories__extra">
       <div class="banner-categories__item__icon pt-1">
         <EcoIcon name="plus" style="width: 18px; height: 18px"></EcoIcon>
       </div>
@@ -94,24 +40,34 @@ export default {
   background-color: $white;
   border: 1px solid $gray-g200;
 
+  &__container {
+    max-height: 438px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      
+      display: none;
+      width: 4px;
+      height: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $gray-g300;
+      border-radius: 20px;
+    }
+  }
+
   &__item {
     padding: 16px 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 12px;
+    border-bottom: 1px solid $gray-g200;
 
     &:hover {
-      color: $white;
-      background-color: $gray-g800;
-
-      .banner-categories__item__icon {
-        svg {
-          fill: $white;
-        }
-      }
-    }
-    &--active {
       color: $white;
       background-color: $primary;
 
@@ -121,9 +77,6 @@ export default {
         }
       }
     }
-    &:last-child {
-      border-top: 1px solid $gray-g200;
-    }
 
     &__icon {
       svg {
@@ -132,6 +85,10 @@ export default {
         fill: $gray-g400;
       }
     }
+  }
+
+  &__extra {
+    border-top: 1px solid $gray-g200;
   }
 }
 </style>

@@ -49,3 +49,16 @@ export const sliderOptions: ISliderOptions = {
   arrows: false,
   autoHeight: true
 }
+
+export const bannerExtraSliderOptions = {
+  type: 'loop',
+  autoplay: true,
+  speed: 800,
+  interval: 2500,
+  perPage: 4,
+  easing: 'ease',
+  gap: '0px',
+  arrows: false,
+  pagination: false,
+  autoHeight: true
+}
