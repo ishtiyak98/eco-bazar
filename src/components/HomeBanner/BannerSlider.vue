@@ -23,7 +23,7 @@
                 class="home-banner__btn btn btn--primary d-inline-flex align-center ga-2"
               >
                 <p>{{ data.btn }}</p>
-                <img src="../../assets/icons/arrow-right.svg" alt="" />
+                <EcoIconVue name="arrow-right"></EcoIconVue>
               </div>
             </div>
           </div>
@@ -38,10 +38,11 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/vue-splide'
 import { sliderData, sliderOptions } from '@/components/HomeBanner/sliderData'
 import { defineComponent } from 'vue'
+import EcoIconVue from '../Shared/EcoIcon/EcoIcon.vue'
 
 export default defineComponent({
   name: 'BannerSlider',
-  components: { Splide, SplideSlide, SplideTrack },
+  components: { Splide, SplideSlide, SplideTrack, EcoIconVue },
   data() {
     return {
       sliderData: sliderData,
@@ -101,7 +102,7 @@ export default defineComponent({
   }
 
   &__btn {
-    img {
+    svg {
       transform: translateX(0px);
       animation: slide 0.8s linear infinite alternate;
 

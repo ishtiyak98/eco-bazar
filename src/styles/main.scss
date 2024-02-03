@@ -133,5 +133,34 @@ b
     &:hover {
       background-color: darken($primary, 5);
     }
+
+    svg {
+      stroke: $white;
+      stroke-width: 2px;
+    }
   }
+
+  &--white {
+    color: $primary;
+    background-color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $primary;
+
+      svg {
+        stroke: $white;
+      }
+    }
+
+    svg {
+      stroke: $primary;
+      stroke-width: 2px;
+    }
+  }
+}
+
+//!----------- section styles -----------
+.section {
+  margin: 60px auto;
 }
