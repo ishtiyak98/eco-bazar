@@ -20,8 +20,12 @@ body {
 
 //!----------- custom container -----------
 .container {
-  max-width: 1320px;
+  max-width: 370px;
   margin: 0 auto;
+  @include lg {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
 }
 
 //!----------- text capitalize -----------

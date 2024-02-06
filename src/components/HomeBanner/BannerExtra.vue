@@ -17,33 +17,33 @@
           <SplideSlide>
             <div class="banner-extra__item">
               <div class="banner-extra__item__icon rounded-circle">
-                <EcoIcon name="delivery-truck"></EcoIcon>
+                <EcoIcon name="headphones"></EcoIcon>
               </div>
               <div class="banner-extra__item__text">
-                <p class="font-weight-bold mb-1">Free Shipping</p>
-                <p>Free shipping with Discount</p>
+                <p class="font-weight-bold mb-1">Great Support 24/7</p>
+                <p>Instant access to Contact</p>
               </div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="banner-extra__item banner-extra__item--active">
               <div class="banner-extra__item__icon rounded-circle">
-                <EcoIcon name="delivery-truck"></EcoIcon>
+                <EcoIcon name="shopping-bag"></EcoIcon>
               </div>
               <div class="banner-extra__item__text">
-                <p class="font-weight-bold mb-1">Free Shipping</p>
-                <p>Free shipping with Discount</p>
+                <p class="font-weight-bold mb-1">100% Secure Payment</p>
+                <p>We ensure your money is save</p>
               </div>
             </div>
           </SplideSlide>
           <SplideSlide>
             <div class="banner-extra__item">
               <div class="banner-extra__item__icon rounded-circle">
-                <EcoIcon name="delivery-truck"></EcoIcon>
+                <EcoIcon name="package"></EcoIcon>
               </div>
               <div class="banner-extra__item__text">
-                <p class="font-weight-bold mb-1">Free Shipping</p>
-                <p>Free shipping with Discount</p>
+                <p class="font-weight-bold mb-1">Money-Back Guarantee</p>
+                <p>30 days money-back</p>
               </div>
             </div>
           </SplideSlide>
@@ -78,9 +78,11 @@ export default {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 30px 30px 30px 0px;
+    padding: 30px 0px;
+    border-bottom: 2px solid transparent;
 
-    &--active {
+    &:hover {
+      cursor: pointer;
       border-bottom: 2px solid $primary;
 
       .banner-extra__item__icon {
@@ -91,7 +93,11 @@ export default {
       }
     }
     &__icon {
-      padding: 16px;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: $gray-g50;
 
       svg {

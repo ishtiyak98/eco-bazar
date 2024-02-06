@@ -61,6 +61,8 @@ export default {
         this.hoursCount = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         this.minsCount = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
         this.secondCount = Math.floor((diff % (1000 * 60)) / 1000)
+      } else {
+        clearInterval(counter)
       }
     }, 1000)
   }
@@ -69,10 +71,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/config';
+@import '../../styles/responsive';
 
 .promo-board {
   width: 100%;
-  height: 536px;
+  height: 350px;
   padding-top: 35px;
   padding-bottom: 35px;
   display: flex;
@@ -84,6 +87,33 @@ export default {
   align-items: center;
   border-radius: 8px;
   color: #fff;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  z-index: 2;
+  position: relative;
+
+  @include lg {
+    height: 536px;
+  }
+
+  & > * {
+    z-index: 2;
+  }
+
+  &:hover {
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #0000003e;
+      z-index: 1;
+      border-radius: 8px;
+    }
+  }
 
   &__sub-heading {
     font-size: 14px;

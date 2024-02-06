@@ -57,7 +57,7 @@ export const bannerExtraSliderOptions = {
   interval: 2500,
   perPage: 4,
   easing: 'ease',
-  gap: '0px',
+  gap: '20px',
   arrows: false,
   pagination: false,
   autoHeight: true

@@ -1,8 +1,11 @@
 <template>
   <div class="container section">
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12" lg="4">
         <BoardOne></BoardOne>
+      </v-col>
+      <v-col cols="12" lg="4">
+        <BoardTwo></BoardTwo>
       </v-col>
     </v-row>
   </div>
@@ -10,9 +13,11 @@
 
 <script lang="ts">
 import BoardOne from '@/components/PromotionArea/BoardOne.vue'
+import BoardTwo from '@/components/PromotionArea/BoardTwo.vue'
+
 export default {
   name: 'PromotionArea',
-  components: { BoardOne }
+  components: { BoardOne, BoardTwo }
 }
 </script>
 
