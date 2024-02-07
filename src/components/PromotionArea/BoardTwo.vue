@@ -71,6 +71,7 @@ export default {
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 16px;
+    font-weight: 500;
   }
 
   &__heading {
@@ -88,6 +89,9 @@ export default {
       font-size: 18px;
       font-weight: 600;
       color: $warning;
+      padding: 8px 12px;
+      background-color: $gray-g900;
+      border-radius: 5px;
     }
   }
 }

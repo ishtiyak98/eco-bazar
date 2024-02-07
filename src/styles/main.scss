@@ -167,4 +167,20 @@ b
 //!----------- section styles -----------
 .section {
   margin: 60px auto;
+
+  &__sub-header {
+    color: $primary;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__header {
+    font-size: 36px;
+    font-weight: 600;
+    color: $gray-g900;
+  }
+
+  &--content-gap{
+    margin-top: 36px;
+  }
 }
