@@ -4,7 +4,7 @@
     <p class="section__header text-center">Shop by Top Categories</p>
     <div class="section--content-gap">
       <v-row>
-        <v-col v-for="category in categoriesData" :key="category.id" cols="6" lg="2">
+        <v-col v-for="category in categories" :key="category.id" cols="6" lg="2">
           <div class="category-card">
             <div class="category-card__img">
               <img :src="category.img" alt="" />
@@ -19,7 +19,9 @@
 
 <script>
 import { categoriesData } from './allCategories.ts'
+import ApiCall from '../../api/apiInterface.ts'
 import { useCategoryStore } from '../../stores/categoryStore'
+import { storeToRefs } from 'pinia'
 
 export default {
   name: 'AllCategories',
@@ -29,9 +31,15 @@ export default {
       categories: []
     }
   },
-  mounted() {
-    this.categories = useCategoryStore()
-    console.log(this.categories)
+  async mounted() {
+    //this.categories = useCategoryStore().categories
+
+    try {
+      const { data } = await ApiCall.get('/src/data/categories.json')
+      this.categories = data.categories
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 </script>
