@@ -31,12 +31,18 @@ export default {
       categories: []
     }
   },
+  watch: {
+    categories(newValue) {
+      if (newValue.length > 0) {
+        console.log('form watch', newValue)
+        useCategoryStore().addCategories(newValue)
+      }
+    }
+  },
   async mounted() {
-    //this.categories = useCategoryStore().categories
-
     try {
       const { data } = await ApiCall.get('/src/data/categories.json')
-      this.categories = data.categories
+      this.categories = data
     } catch (error) {
       console.log(error)
     }
@@ -49,13 +55,13 @@ export default {
 @import '../../styles/responsive';
 
 .category-card {
-  border: 2px solid $gray-g100;
+  border: 1px solid $gray-g100;
   padding: 20px;
   cursor: pointer;
 
   &:hover {
-    border: 2px solid $primary-hard;
-    box-shadow: $primary-soft 0px 1px 4px;
+    border: 1px solid $primary-hard;
+    box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
 
     p {
       color: $primary-hard;

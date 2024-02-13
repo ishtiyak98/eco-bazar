@@ -3,12 +3,19 @@ import categories from '../data/categories.json'
 
 export const useCategoryStore = defineStore('categoryStore', {
   //!---- state ----
-  state: () => {
-    return {
-      categories
+  state: () => ({
+    categories: []
+  }),
+  //!---- actions ----
+  actions: {
+    addCategories(data: []) {
+      this.categories = data
+    }
+  },
+  //!---- getters ----
+  getters: {
+    getCategories() {
+      return categories
     }
   }
-
-  //!---- actions ----
-  //!---- getters ----
 })

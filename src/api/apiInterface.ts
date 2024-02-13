@@ -1,8 +1,8 @@
-import Axios from 'axios'
+import axios from 'axios'
 import { serverUrl } from '../constants/config'
 
 const ApiCall = {
-  get: async (url: string) => Axios.get(`${serverUrl}${url}`)
+  get: async (url: string) => axios.get(`${serverUrl}${url}`)
 }
 
 export default ApiCall
