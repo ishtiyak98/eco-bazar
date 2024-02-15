@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "name": "green apple",
+        "price": 12.99,
+        "ratings": 4,
+        "img": "/src/assets/images/products/green-apple.jpg"
+    },
+    {
+        "id": "2",
+        "name": "chinese cabbage",
+        "price": 12.99,
+        "ratings": 5,
+        "img": "/src/assets/images/products/chinese-cabage.jpg"
+    },
+    {
+        "id": "3",
+        "name": "green lettuce",
+        "price": 12.99,
+        "ratings": 4,
+        "img": "/src/assets/images/products/green-lettuce.jpg"
+    },
+    {
+        "id": "4",
+        "name": "green chili",
+        "price": 12.99,
+        "ratings": 4,
+        "img": "/src/assets/images/products/green-chili.jpg"
+    },
+    {
+        "id": "5",
+        "name": "corn",
+        "price": 12.99,
+        "ratings": 4,
+        "img": "/src/assets/images/products/corn.jpg"
+    }
+]

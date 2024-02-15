@@ -9,18 +9,25 @@
           <EcoIcon name="eye" class="product__quick-view"></EcoIcon>
         </div>
       </div>
-      <img src="../../assets/images/products/chinese-cabage.jpg" alt="" />
+      <img :src="product.img" alt="" />
     </div>
     <div class="product__info px-4 py-3 d-flex align-center justify-space-between">
       <div>
-        <p class="product__info__title">chinese cabbage</p>
-        <p class="product__info__price">$14.99</p>
+        <p class="product__info__title">{{ product.name }}</p>
+        <p class="product__info__price">{{ product.price }}</p>
         <div class="product__info__rating">
-          <EcoIcon name="star" class="star star--fill"></EcoIcon>
-          <EcoIcon name="star" class="star star--fill"></EcoIcon>
-          <EcoIcon name="star" class="star star--fill"></EcoIcon>
-          <EcoIcon name="star" class="star star--fill"></EcoIcon>
-          <EcoIcon name="star" class="star"></EcoIcon>
+          <EcoIcon
+            v-for="(rating, index) in product.ratings"
+            :key="index"
+            name="star"
+            class="star star--fill"
+          ></EcoIcon>
+          <EcoIcon
+            v-for="(rating, index) in 5-product.ratings"
+            :key="index"
+            name="star"
+            class="star"
+          ></EcoIcon>
         </div>
       </div>
       <div class="product__info__add-to-cart">
@@ -34,7 +41,10 @@
 import EcoIcon from '@/components/Shared/EcoIcon/EcoIcon.vue'
 export default {
   name: 'ProductCardOne',
-  components: { EcoIcon }
+  components: { EcoIcon },
+  props: {
+    product: { type: Object, required: true }
+  }
 }
 </script>
 
@@ -44,7 +54,7 @@ export default {
 
 .product {
   border: 1px solid $gray-g100;
-  display: inline-block;
+  //display: inline-block;
   overflow: hidden;
 
   &:hover {

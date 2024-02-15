@@ -9,7 +9,6 @@ import vuetify from './vuetify'
 import VueSplide from '@splidejs/vue-splide'
 import '@splidejs/vue-splide/css'
 
-
 export function registerPlugins(app: App) {
   app.use(router).use(createPinia()).use(vuetify).use(VueSplide)
 }

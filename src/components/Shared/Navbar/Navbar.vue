@@ -157,6 +157,8 @@ export default {
 
   &__actions {
     &__icon {
+      width: 32px;
+      height: 32px;
       stroke: $white;
 
       &:hover {

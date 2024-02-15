@@ -17,9 +17,9 @@
   </section>
 </template>
 
-<script>
-import { categoriesData } from './allCategories.ts'
-import ApiCall from '../../api/apiInterface.ts'
+<script lang="ts">
+import { ICategories } from './allCategories'
+import ApiCall from '../../api/apiInterface'
 import { useCategoryStore } from '../../stores/categoryStore'
 import { storeToRefs } from 'pinia'
 
@@ -27,7 +27,7 @@ export default {
   name: 'AllCategories',
   data() {
     return {
-      categoriesData: categoriesData,
+      //categoriesData: categoriesData,
       categories: []
     }
   },
